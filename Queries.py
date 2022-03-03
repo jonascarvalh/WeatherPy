@@ -1,3 +1,9 @@
+from decouple import config
+
+# Obtenha seu token em OpenWeatherMap.org
+# Crie um arquivo .env e escreva dessa forma: TOKEN={seu_token}
+TOKEN = config('TOKEN')
+
 class Queries:
     def __init__(self):
         self.city  = ""
@@ -10,7 +16,7 @@ class Queries:
         self.city  = city
         self.lang  = 'pt_br'
         self.unit  = 'metric'
-        self.token = 'seu token aqui'
+        self.token = TOKEN
     # Construtor Parametrizado
     
     def getQueries(self):
